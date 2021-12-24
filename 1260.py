@@ -42,7 +42,7 @@ while(True):
             #방문정보 저장
             
             V=DFS_search(V,graph,Min)
-    else:
+    elif (Min == 6):
            #이어진 연결 선이 없는경우
            V = stack.pop()
            V=DFS_search(V,graph,Min)

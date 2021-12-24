@@ -7,12 +7,12 @@ for i in range(m):
 
 visit_list = [0] * (n + 1)  # 0번인덱스부터하면 헷갈리니까
 
-def dfs(start_node):
+def dfs(start_node,visit_list):
     visit_list[start_node] = 1
     print(start_node, end=' ')
     for i in range(1, n + 1):
         if visit_list[i] == 0 and matrix[start_node][i] == 1:   # 아직 방문안했는데 방문해야할 곳
-            dfs(i)
+            dfs(i,visit_list)
 
 
 def bfs(start_node):
@@ -23,12 +23,12 @@ def bfs(start_node):
         start_node = queue.pop(0)
         print(start_node, end=' ')
         for i in range(1, n + 1):
-            if visit_list[i] == 0 and matrix[start_node][i] == 1:
+            if visit_list[i] == 0 and matrix[start_node][i] == 1 :
                 queue.append(i)
                 visit_list[i] = 1
 
 
-dfs(v)
+dfs(v,visit_list)
 print()
 visit_list = [0] * (n + 1)
 bfs(v)
