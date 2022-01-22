@@ -18,8 +18,11 @@ def binarySearch(start, end, N):
     mid = (start + end) // 2
     lan_num = lan_count(mid)
     if lan_num >= N:
-        return binarySearch(mid+1, end, N)
+        # return binarySearch(mid+1, end, N)
+        binarySearch(mid+1, end, N)
+    
     else:
-        return binarySearch(start, mid-1, N)
-
+        # return binarySearch(start, mid-1, N)
+        binarySearch(start, mid-1, N)
+    
 print(binarySearch(1, end, N))
